@@ -1,46 +1,72 @@
 export const AboutPage = () => {
 	return (
-		<div className='space-y-5'>
-			<h1 className='text-center text-4xl font-semibold tracking-tight mb-5'>
-				Nuestra empresa
-			</h1>
+		<section className="space-y-8 pb-20">
+			{/* Encabezado */}
+			<header className="text-center space-y-3">
+				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight uppercase">
+					Somos <span className="text-cyan-600">Movimiento</span>
+				</h1>
+				<p className="text-gray-600 font-medium text-sm md:text-base max-w-2xl mx-auto">
+					En cada costura, en cada fibra y en cada gota de sudor, llevamos una idea simple: 
+					el cuerpo cambia cuando la mente decide no rendirse.
+				</p>
+			</header>
 
-			<img
-				src='https://plus.unsplash.com/premium_photo-1682716270464-9a91cbbcf3b7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWRpZmljaW8lMjBkZSUyMGxhJTIwZW1wcmVzYXxlbnwwfHwwfHx8MA%3D%3D'
-				alt='Imagen de fondo'
-				className='h-[500px] w-full object-cover'
-			/>
+			{/* Imagen */}
+			<div className="relative">
+				<img
+					src="https://images.unsplash.com/photo-1599058917212-d750089bc07b?auto=format&fit=crop&w=3000&q=60"
+					alt="Atleta entrenando"
+					className="h-[500px] w-full object-cover rounded-2xl shadow-lg"
+				/>
+				<div className="absolute inset-0 bg-black/30 rounded-2xl" />
+			</div>
 
-			<div className='flex flex-col gap-4 tracking-tighter leading-7 text-sm font-medium text-slate-800'>
+			{/* Contenido principal */}
+			<div className="max-w-3xl mx-auto text-center space-y-6 tracking-tight leading-7 text-slate-800">
 				<p>
-					CelularesBaratos es una tienda en línea que se dedica a la
-					venta de celulares, fundada en 2021. Nuestro objetivo es
-					ofrecer a nuestros clientes la mejor calidad y precio en
-					celulares. Contamos con un equipo de profesionales que se
-					encargan de seleccionar los mejores productos para ti.
+					Somos <span className="font-semibold text-cyan-600">TATO RESILIENT</span>, una marca nacida entre barras, 
+					kettlebells y sueños grandes. No diseñamos ropa: 
+					diseñamos <span className="font-semibold">actitud</span>. 
+					Cada prenda está hecha para quienes no le temen al cansancio 
+					y saben que la disciplina también se entrena.
 				</p>
 
-<p>
-					En CelularesBaratos podrás encontrar una amplia variedad de
-					celulares de las mejores marcas. Además, contamos con
-					promociones y descuentos exclusivos para que puedas comprar
-					tu celular al mejor precio.
+				<p>
+					Nuestro compromiso va más allá del gimnasio: buscamos inspirar 
+					a una comunidad que se levanta temprano, que falla, 
+					que vuelve a intentarlo y que encuentra en el movimiento su refugio.
 				</p>
 
-				<h2 className='text-3xl font-semibold tracking-tighh mt-8 mb-4'>
-					¡No esperes más y compra tu celular en CelularesBaratos!
+				<p>
+					Creamos ropa que respira contigo, que se adapta, que resiste.  
+					Porque en el gym y en la vida, lo que importa no es ser perfecto, 
+					sino ser <span className="font-semibold text-cyan-600 uppercase">resiliente</span>.
+				</p>
+
+				<h2 className="text-2xl font-bold mt-10">
+					#EntrenaConActitud 💥
 				</h2>
 
-				<p>
-					Para más información, no dudes en ponerte en contacto con
-					nosotros, a través de nuestro correo electrónico:
-					<a href='mailto:correo@celularesbaratos.com'>
-						correo@celularesbaratos.com
-					</a>{' '}
-					o llamado al <a href='tel:333333333'>3333333333</a>
+				<p className="text-sm text-gray-600">
+					¿Tienes dudas o quieres colaborar con nosotros?  
+					Escríbenos a{" "}
+					<a
+						href="mailto:contacto@tatoresilient.com"
+						className="text-cyan-600 underline hover:text-cyan-700"
+					>
+						contacto@tatoresilient.com
+					</a>{" "}
+					o llámanos al{" "}
+					<a
+						href="tel:+573333333333"
+						className="text-cyan-600 underline hover:text-cyan-700"
+					>
+						+57 333 333 3333
+					</a>.
 				</p>
 			</div>
-		</div>
+		</section>
 	);
 };
 

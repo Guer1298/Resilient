@@ -1,4 +1,5 @@
 import { CardProduct } from '../components/products/CardProduct';
+import { ContainerFilter } from '../components/products/ContainerFilter';
 
 
 import { allCamisas } from '../data/initialData';
@@ -15,6 +16,7 @@ export const CamisasPage = () => {
 
 			<div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
 				{/* FILTROS */}
+        <ContainerFilter />
 				
 
 				<div className='col-span-2 lg:col-span-2 xl:col-span-4 flex flex-col gap-12'>

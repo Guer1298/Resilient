@@ -14,7 +14,7 @@ export const navBarLinks = [
     {
         id:3,
         title: "Contact",
-        href: "/contact"
+        href: "/nosotros"
     }
 ]
 
