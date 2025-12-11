@@ -34,7 +34,7 @@ export interface PreparedProducts {
 	name: string;
 	brand: string;
 	slug: string;
-	features: string[];
+	features: string[] | null;
 	description: Json;
 	images: string[];
 	created_at: string;

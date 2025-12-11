@@ -87,7 +87,7 @@ export const CardProduct = ({
             text-sm font-medium 
             translate-y-[100%] group-hover:translate-y-0 
             transition-all duration-300 hover:bg-slate-100
-          "
+          " onClick={handleAddClick}
         >
           <FiPlus size={16} />
           Añadir

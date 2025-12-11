@@ -59,7 +59,6 @@ export const CamisasPage = () => {
 						))}
 					</div>
 
-					{/* TODO: Paginación */}
 					<Pagination
 						totalItems={totalProducts}
 						page={page}
