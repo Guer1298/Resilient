@@ -1,80 +1,99 @@
-
-import { BiChevronRight } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
-import { socialLinks } from '../../constans/links';
-
-
-
+import { BiChevronRight } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { socialLinks } from "../../constans/links";
 
 const Footer = () => {
   return (
-    <footer className="py-16 bg-gray-950 px-12 flex justify-between gap-10 text-slate-200 text-sm flex-wrap mt-10 md:flex-nowrap">
-        <Link to="/" className="text-2xl font-bold tracking-tighter transition-all text-white flex-1">
-        TATORESILIENT
-    </Link>
-    <div className='flex flex-col gap-4 flex-1'>
-        <p className='font-semibold uppercase tracking-tighter'>
-            suscribete
-        </p>
-        <p className='text-xs text-gray-400'>
-            Suscríbete a nuestro boletín para recibir las últimas actualizaciones y ofertas exclusivas.
-        </p>
+    <footer className="py-16 bg-gray-950 px-8 md:px-12 text-slate-200 text-sm mt-10 border-t border-gray-800">
+      <div className="flex flex-wrap md:flex-nowrap justify-between gap-10">
 
-        <div className='border border-gray-800 flex items-center gap-2 px-3 py-2 rounded-full'>
-					<input
-						type='email'
-						placeholder='Correo Electrónico'
-						className='pl-2 bg-gray-950 text-slate-200 w-full focus:outline-none'
-					/>
+        {/* LOGO */}
+        <Link
+          to="/"
+          className="text-3xl font-extrabold tracking-tight text-white transition-all hover:text-cyan-500 flex-1"
+        >
+          RESILIENT
+        </Link>
 
-					<button className='text-slate-200'>
-						<BiChevronRight size={20} />
-					</button>
-		</div>
-        
-    </div>
+        {/* SUSCRIPCIÓN */}
+        <div className="flex flex-col gap-4 flex-1 max-w-xs">
+          <p className="font-semibold uppercase tracking-tight text-white">
+            Suscríbete
+          </p>
 
-    <div className='flex flex-col gap-4 flex-1'>
-				<p className='font-semibold uppercase tracking-tighter'>
-					Políticas
-				</p>
+          <p className="text-xs text-gray-400 leading-relaxed">
+            Únete a nuestra comunidad fitness y recibe ofertas exclusivas, 
+            lanzamientos de nuevas camisas y diseños personalizados cada semana.
+          </p>
 
-				<nav className='flex flex-col gap-2 text-xs font-medium'>
-					<Link to='/celulares'>Productos</Link>
-					<Link to='#' className='text-slate-300 hover:text-white'>
-						Políticas de privacidad
-					</Link>
-					<Link to='#' className='text-slate-300 hover:text-white'>
-						Términos de uso
-					</Link>
-				</nav>
-			</div>
-            <div className='flex flex-col gap-4 flex-1'>
-				<p className='font-semibold uppercase tracking-tighter'>
-					Síguenos
-				</p>
+          <div className="border border-gray-700 bg-gray-900 flex items-center px-3 py-2 rounded-full focus-within:ring-1 focus-within:ring-cyan-500">
+            <input
+              type="email"
+              placeholder="Correo electrónico"
+              className="pl-1 bg-transparent text-slate-200 w-full focus:outline-none"
+            />
+            <button
+              aria-label="Enviar correo de suscripción"
+              className="text-slate-200 hover:text-cyan-400 transition-all"
+            >
+              <BiChevronRight size={22} />
+            </button>
+          </div>
+        </div>
 
-				<p className='text-xs leading-6'>
-					No te pierdas las novedades que CelularesBaratos tiene para
-					ti.
-				</p>
+        {/* POLÍTICAS */}
+        <div className="flex flex-col gap-4 flex-1">
+          <p className="font-semibold uppercase tracking-tight text-white">
+            Políticas
+          </p>
 
-				<div className='flex'>
-					{socialLinks.map(link => (
-						<a
-							key={link.id}
-							href={link.href}
-							target='_blank'
-							rel='noreferrer'
-							className='text-slate-300 border border-gray-8000 w-full h-full py-3.5 flex items-center justify-center transition-all hover:bg-white hover:text-gray-950'
-						>
-							{link.icon}
-						</a>
-					))}
-				</div>
-			</div>
+          <nav className="flex flex-col gap-2 text-xs font-medium text-slate-300">
+            <Link to="/productos" className="hover:text-white">
+              Productos
+            </Link>
+            <Link to="/privacidad" className="hover:text-white">
+              Políticas de privacidad
+            </Link>
+            <Link to="/terminos" className="hover:text-white">
+              Términos de uso
+            </Link>
+          </nav>
+        </div>
+
+        {/* REDES SOCIALES */}
+        <div className="flex flex-col gap-4 flex-1">
+          <p className="font-semibold uppercase tracking-tight text-white">
+            Síguenos
+          </p>
+
+          <p className="text-xs text-gray-400 leading-relaxed">
+            Descubre nuevas colecciones, descuentos y diseños personalizados 
+            exclusivos para la comunidad RESILIENT.
+          </p>
+
+          <div className="flex gap-2">
+            {socialLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-slate-300 w-10 h-10 border border-gray-700 flex items-center justify-center rounded-md transition-all hover:bg-white hover:text-gray-950 hover:border-white"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* COPYRIGHT */}
+      <div className="mt-10 text-xs text-gray-500 text-center">
+        © {new Date().getFullYear()} Resilient. Todos los derechos reservados.  
+        Diseñado para atletas, creadores y mentes fuertes.
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

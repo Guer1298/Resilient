@@ -1,7 +1,5 @@
-import { type PreparedProducts } from '../../interfaces';
-// Make sure the path and filename are correct; adjust if necessary
-// Update the import path below to match the actual location and filename of CardProduct
-import { CardProduct } from '../products/CardProduct.tsx';
+import type { PreparedProducts } from '../../interfaces';
+import { CardProduct } from '../products/CardProduct';
 
 interface Props {
 	title: string;

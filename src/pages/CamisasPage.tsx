@@ -1,12 +1,26 @@
 import { CardProduct } from '../components/products/CardProduct';
 import { ContainerFilter } from '../components/products/ContainerFilter';
-
-
-import { allCamisas } from '../data/initialData';
+import { Pagination } from '../components/shared/Pagination';
 import { prepareProducts } from '../helpers';
+import { useFilteredProducts,  } from '../hooks';
+import { useEffect, useMemo, useState } from 'react';
+
+
 
 export const CamisasPage = () => {
-	const preparedProducts = prepareProducts(allCamisas);
+
+	const [page,setPage]= useState(1);
+	const [selectedBrands,setSelectedBrands]= useState<string[]>([]);
+
+
+	const {data:products=[], isLoading,totalProducts}= useFilteredProducts({
+		page,
+		brands: selectedBrands,
+	});
+
+	
+
+	const preparedProducts = prepareProducts(products);
 
 	return (
 		<>
@@ -16,10 +30,21 @@ export const CamisasPage = () => {
 
 			<div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'>
 				{/* FILTROS */}
-        <ContainerFilter />
-				
+        <ContainerFilter
+		  selectedBrands={selectedBrands}
+		  setSelectedBrands={setSelectedBrands}
+		
+		/>
 
-				<div className='col-span-2 lg:col-span-2 xl:col-span-4 flex flex-col gap-12'>
+		{
+			isLoading ? (
+				<div className='col-span-2 flex items-center justify-center h-[500px]'>
+					<p className='text-2xl'>Cargando...</p>
+
+				</div>
+				) : (
+
+					<div className='col-span-2 lg:col-span-2 xl:col-span-4 flex flex-col gap-12'>
 					<div className='grid grid-cols-2 gap-3 gap-y-10 xl:grid-cols-4'>
 						{preparedProducts.map(product => (
 							<CardProduct
@@ -35,7 +60,18 @@ export const CamisasPage = () => {
 					</div>
 
 					{/* TODO: Paginación */}
+					<Pagination
+						totalItems={totalProducts}
+						page={page}
+						setPage={setPage}
+					/>
 				</div>
+
+				)
+		}
+				
+
+				
 			</div>
 		</>
 	);
