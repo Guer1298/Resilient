@@ -3,7 +3,7 @@ import { ContainerFilter } from '../components/products/ContainerFilter';
 import { Pagination } from '../components/shared/Pagination';
 import { prepareProducts } from '../helpers';
 import { useFilteredProducts,  } from '../hooks';
-import { useEffect, useMemo, useState } from 'react';
+import {  useState } from 'react';
 
 
 

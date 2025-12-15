@@ -146,6 +146,15 @@ export const CamisaPage = () => {
 		}
 	};
 
+	// Resetear el slug actual cuando cambia en la URL
+	useEffect(() => {
+		setCurrentSlug(slug);
+
+		// Reiniciar color, almacenamiento y variante seleccionada
+		setSelectedColor(null);
+		setSelectedTalla(null);
+		setSelectedVariant(null);
+	}, [slug]);
 
     if (isLoading) return <Loader />;
 
