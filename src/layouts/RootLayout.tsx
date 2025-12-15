@@ -3,11 +3,11 @@ import { Navbar } from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
 import { Banner } from "../components/home/Banner";
 import { Newsletter } from "../components/home/Newsletter";
-import { Sheet } from "../components/shared/sheet";
+import { Sheet } from "../components/shared/Sheet";
 import { NavbarMobile } from "../components/shared/NavBarMobile";
 import { useGlobalStore } from "../store/global.store";
 
-export const RouteLayout = () => {
+export const RootLayout = () => {
   const {pathname} = useLocation();
 
   const isSheetOpen = useGlobalStore(state => state.isSheetOpen);

@@ -97,7 +97,7 @@ export const CamisaPage = () => {
 	useEffect(() => {
 		if (selectedColor && selectedTalla) {
 			const variant = product?.variants.find(
-				variant =>
+				(				variant: { color: string; talla: string; }) =>
 					variant.color === selectedColor &&
 					variant.talla === selectedTalla
 			);
@@ -183,15 +183,16 @@ export const CamisaPage = () => {
 
                     {/* Características */}
 					<ul className='space-y-2 ml-7 my-10'>
-						{product.features.map(feature => (
-							<li
-								key={feature}
-								className='text-sm flex items-center gap-2 tracking-tight font-medium'
-							>
-								<span className='bg-black w-[5px] h-[5px] rounded-full' />
-								{feature}
-							</li>
-						))}
+						{product.features?.map((feature: string) => (
+					<li
+						key={feature}
+						className="text-sm flex items-center gap-2 tracking-tight font-medium"
+					>
+						<span className="bg-black w-[5px] h-[5px] rounded-full" />
+						{feature}
+					</li>
+					))}
+
 					</ul>
 
                     <div className="flex flex-col gap-3">
@@ -233,11 +234,12 @@ export const CamisaPage = () => {
 									value={selectedTalla || ''}
 									onChange={e => setSelectedTalla(e.target.value)}
 								>
-									{colors[selectedColor].tallas.map(talla=> (
-										<option value={talla} key={talla}>
-											{talla}
-										</option>
+									{colors[selectedColor].tallas.map((talla: string) => (
+  										<option value={talla} key={talla}>
+    										{talla}
+  										</option>
 									))}
+
 								</select>
 							</div>
 						)}
